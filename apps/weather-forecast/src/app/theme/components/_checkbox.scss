@@ -1,0 +1,41 @@
+@use '../global/colors' as *;
+
+.custom-check {
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	input[type='checkbox'] {
+		appearance: none;
+	}
+
+	input[type='checkbox']:checked + .custom-check--box::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 8px;
+		height: 8px;
+		border-radius: 2px;
+		background-color: $primary;
+		transform: translate(-50%, -50%);
+	}
+
+	input[type='checkbox']:checked + .custom-check--box {
+		border-color: $primary;
+	}
+
+	&--box {
+		width: 16px;
+		height: 16px;
+		border-radius: 4px;
+		border: 2px solid $cloud;
+		background-color: $white;
+		position: relative;
+		margin-right: 0.5rem;
+	}
+
+	&--label {
+		font-weight: 500;
+	}
+}

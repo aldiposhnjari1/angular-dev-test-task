@@ -1,0 +1,50 @@
+@use '../global/colors' as *;
+
+.form-field {
+	width: 100%;
+	background-color: $cloud;
+	border: 2px solid transparent;
+	border-radius: 4px;
+	padding: 1rem;
+	font-size: 1rem;
+	color: $dark;
+
+	-webkit-transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+	-moz-transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+	transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+}
+
+.form-field::placeholder {
+	opacity: 0;
+}
+
+.floating-label {
+	position: absolute;
+	font-weight: 500;
+	color: $dark;
+	font-size: 1rem;
+	top: 50%;
+	left: calc(1rem + 5px);
+	transform: translateY(-50%);
+
+	-webkit-transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+	-moz-transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+	transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 200ms;
+}
+
+.form-field:focus + .floating-label,
+.form-field:not(:placeholder-shown) + .floating-label {
+	top: 0;
+	background: $white;
+	padding: 0 5px;
+}
+
+.form-field:focus::placeholder {
+	opacity: 1;
+}
+
+.form-field:focus,
+.form-field:not(:placeholder-shown) {
+	border-color: $cloud;
+	background-color: $white;
+}

@@ -1,0 +1,30 @@
+<form class="form" [formGroup]="weatherForm">
+	<div class="form__body">
+		<div class="form-group">
+			<input type="text" class="form-field" formControlName="searchField" placeholder="City" id="searchField" />
+			<label for="searchField" class="floating-label"> Start searching... </label>
+		</div>
+
+		<div class="d-grid">
+			<div class="form-group">
+				<label class="custom-check">
+					<input type="checkbox" formControlName="hourly" />
+					<div class="custom-check--box"></div>
+					<div class="custom-check--label">Hourly</div>
+				</label>
+			</div>
+			<div class="form-group">
+				<label class="custom-check">
+					<input type="checkbox" formControlName="daily" />
+					<div class="custom-check--box"></div>
+					<div class="custom-check--label">Daily</div>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="form__footer">
+		<button class="ui-btn primary" (click)="this.srs.filterByText(this.weatherForm.value.searchField)">
+			Search
+		</button>
+	</div>
+</form>

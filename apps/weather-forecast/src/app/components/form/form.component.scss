@@ -1,0 +1,48 @@
+@use '../../theme/global/colors' as *;
+
+.form {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	width: auto;
+	margin-top: 3rem;
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__footer {
+		margin-top: 1rem;
+	}
+
+	.d-grid {
+		display: flex;
+		align-items: center;
+
+		.form-group:not(:last-of-type) {
+			margin-right: 1.75rem;
+		}
+	}
+
+	.form-group {
+		position: relative;
+		margin-bottom: 1.25rem;
+	}
+
+	.ui-btn {
+		padding: 0.75rem 2.25rem;
+		font-size: 1rem;
+		font-weight: 700;
+		background: $cloud;
+		color: $dark;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+
+		&.primary {
+			background: $primary;
+			color: $white;
+		}
+	}
+}
