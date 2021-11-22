@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherForecastService } from '../../shared/weather.service';
+//import { map, take } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'card',
@@ -6,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-	constructor() {}
+	//data$: Observable<any>;
+	rowData$ = new Subject();
+	weather = {
+		emptySection: '../../../assets/media/weather_illustrator.svg',
+	};
 
-	ngOnInit() {}
+	constructor(private src: WeatherForecastService) {
+		console.log('card');
+	}
+
+	ngOnInit() {
+		this.src.results$.subscribe((data: any) => this.rowData$.next(data));
+	}
 }

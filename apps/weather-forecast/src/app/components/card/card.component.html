@@ -1,0 +1,36 @@
+<ng-container *ngIf="rowData$ | async as data; else noData">
+	<div class="card">
+		<div class="card__header">
+			<div class="location-info">
+				<i class="fas fa-map-marker-alt"></i>
+				<h1 class="location-text">
+					{{ data.name }}
+				</h1>
+			</div>
+		</div>
+		<div class="card__body">
+			<div class="card__body__row">
+				<div class="card__body__row--column">
+					<i class="fas fa-temperature-high"></i>
+					<h2 class="temp">{{ data.main.temp }} C<sup>&deg;</sup></h2>
+				</div>
+				<div class="card__body__row--column">
+					<i class="fas fa-wind"></i>
+					<h2>Wind:</h2>
+					<span>Speed</span> {{ data.wind.speed }} Km/h
+				</div>
+				<div class="card__body__row--column"></div>
+				<div class="card__body__row--column"></div>
+				<div class="card__body__row--column"></div>
+				<div class="card__body__row--column"></div>
+				<div class="card__body__row--column"></div>
+			</div>
+		</div>
+	</div>
+</ng-container>
+
+<ng-template #noData>
+	<div class="no-data-result">
+		<img [src]="weather.emptySection" />
+	</div>
+</ng-template>

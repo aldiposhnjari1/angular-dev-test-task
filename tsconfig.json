@@ -41,11 +41,12 @@
 	"angularCompilerOptions": {
 		"annotateForClosureCompiler": false,
 		"disableTypeScriptVersionCheck": true,
-		"fullTemplateTypeCheck": true,
-		"strictTemplates": true,
-		"strictInputAccessModifiers": true,
-		"strictInjectionParameters": true,
-		"annotationsAs": "decorators"
+		"fullTemplateTypeCheck": false,
+		"strictTemplates": false,
+		"strictInputAccessModifiers": false,
+		"strictInjectionParameters": false,
+		"annotationsAs": "decorators",
+		"strictPropertyInitialization": false
 	},
 	"exclude": ["node_modules", "tmp", "dist"]
 }
